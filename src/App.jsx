@@ -2,6 +2,8 @@
 // import Data from "./data";
 // import Footer from "./footer";
 
+// import employee from "./employee";
+
 // const nm="Nikesh";
 // const emp="E123";
 // const Sal="45784";
@@ -155,3 +157,100 @@
 // export default App;
 
 
+
+// const student=[
+//     {
+//         "rollno":120,
+//         "name":"nikesh",
+//         "city":"Bhopal"
+//     },
+//     {
+//         "rollno":121,
+//         "name":"Abishek",
+//         "city":"indore"
+//     },
+//     {
+//         "rollno":122,
+//         "name":"Raj",
+//         "city":"hoshangabad"
+//     },
+//     {
+//         "rollno":123,
+//         "name":"Ritika",
+//         "city":"delhi"
+//     }
+// ]
+
+// const ans=student.map((key)=>{
+//     return(
+//         <>
+        
+//          <tr>
+//             <td>{key.rollno}</td>
+//             <td>{key.name}</td>
+//             <td>{key.city}</td>
+//         </tr>
+        
+            
+        
+
+//         </>
+//     )
+// })
+
+// const App=()=>{
+//     return(
+//         <>
+//         <h1>welcome to cybrom</h1>
+//         <table border="2" width="500" bgcolor="pink">
+//         <tr bgcolor="blue">
+//             <th>Roll no</th>
+//             <th>Name</th>
+//             <th>city</th>
+            
+//         </tr>
+//         {ans}
+//         </table>
+//         </>
+//     )
+// }
+
+// export default App;
+
+
+import employee from "./employee"
+
+
+const ans =employee.map((key)=>{
+    return(
+        <>
+        <tr>
+            <td>{key.Empno}</td>
+             <td>{key.name}</td>
+            <td>{key.salary}</td>
+             <td>{key.city}</td>
+
+        </tr>
+        
+        
+        </>
+    )
+})
+
+const App=()=>{
+    return(
+        <>
+        <table border="2" width="500" bgcolor="pink" >
+            <tr>
+            <th>Employee number</th>
+            <th>Employee Name</th>
+            <th>Employee salary</th>
+            <th>Employee city</th>
+            </tr>
+            {ans}
+        </table>
+        
+        </>
+    )
+}
+export default App;
