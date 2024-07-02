@@ -636,7 +636,7 @@
 
 
 // import { Carousel } from 'bootstrap';
-import Container from 'react-bootstrap/Container';
+/*import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -652,15 +652,15 @@ import Row from 'react-bootstrap/Row';
 
 
 
-function BasicExample() {
+const BasicExample=()=>{
     return (
         <>
       <Navbar expand="lg" className='bg-info p-1   navbar-dark bg-white'>
         <Container >
       
 
-          {/* <Navbar.Brand   href="#home"className='text-black fs-2  ' ></Navbar.Brand> */}
-          <nav><img className=' m-2' src="public\logo.png.png" width="120 "   height="100"></img></nav>
+          {/* <Navbar.Brand   href="#home"className='text-black fs-2  ' ></Navbar.Brand> */
+         /* <nav><img className=' m-2' src="public\logo.png.png" width="120 "   height="100"></img></nav>
         
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className='p-2 bg-black rounded-5 '>
@@ -721,7 +721,7 @@ function BasicExample() {
 
 <div className='my-4'>
     <Container>
-    <h1 className='text-center    rounded-4'>ABOUT ME</h1>
+    <h1 className='text-center fw-bolder   rounded-4'>ABOUT ME</h1>
     <p className='text-center fs-4 fw-bolder text-bg-danger rounded-3 my-3 '>I'M Nikesh Yadav</p>
     <p className='text-center fs-3 text-verdana my-4 '>I belong from hoshanagbassd city that is loacated in state madhya pradesh,<br/> I have completed my
                 graduation from govt art and commerce college bhopal <br/> in 2020 in the feild of BBA
@@ -795,29 +795,32 @@ function BasicExample() {
 
     <div>
         <Container>
-            <h3 className='text-center my-5'>LET GET CONNECTED</h3>
+            <h3 className='text-center my-5 fw-bolder'>LET GET CONNECTED</h3>
         </Container>
     </div>
 
     <Container>
-    <Form className='border bg-black text-danger fs-3 rounded-2'>
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-        <Form.Label column sm="2">
+    <Form className='border bg-black text-danger fs-3 rounded-2 '>
+      <Form.Group as={Row} className="mb-3 my-4 text-center" controlId="formPlaintextEmail">
+        <Form.Label column sm="2" className='fs-2 fw-bold '>
           Email
         </Form.Label>
-        <Col sm="10">
-          <Form.Control plaintext readOnly defaultValue="email@example.com" />
+        <Col sm="4" className='my-2' >
+          <Form.Control  placeholder='Enter your Email'  />
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-        <Form.Label column sm="2">
-          Password
+      <Form.Group as={Row} className="mb-3 text-center" controlId="formPlaintextPassword">
+        <Form.Label column sm="2" className='fw-bold'>
+          Company
         </Form.Label>
-        <Col sm="10">
-          <Form.Control type="password" placeholder="Password" />
+        <Col sm="4">
+          <Form.Control type="password" placeholder="Company Name" />
         </Col>
       </Form.Group>
+      <div className="col-12  mx-5 m-auto p-2 ">
+    <button class="btn btn-primary" type="submit" data-mdb-ripple-init>Submit form</button>
+  </div>
     </Form>
     </Container>
     <br/>
@@ -829,17 +832,24 @@ function BasicExample() {
             Contact
 
            </h1>
+           <Col>
+           
            <div>
            <a href='https://github.com/Nikeshydv'>GITHUB</a>
            </div>
+           </Col>
+           
             </Col>
-            <Col>
-            </Col>
+          
             <Col>
             <h1>About</h1>
             </Col>
         </Row>
     </Container>
+
+
+
+
 
 </>
     );
@@ -850,9 +860,9 @@ function BasicExample() {
 
   export default BasicExample;
 
-  import Carousel from 'react-bootstrap/Carousel';
-//   import ExampleCarouselImage from 'components/ExampleCarouselImage';
-//   import img from "./public/image1.png";
+  import Carousel from 'react-bootstrap/Carousel';*/
+  // import ExampleCarouselImage from 'components/ExampleCarouselImage';
+  // import img from "./public/image1.png";
 
 
 
@@ -896,3 +906,80 @@ function BasicExample() {
 // }
 
 // export default App;
+
+
+
+// import { BrowserRouter,Routes,Route } from "react-router-dom";
+// import Layout from "./Layout";
+// import Home from "./Home";
+// import About from "./About";
+// import Contact from "./Contact";
+// import Nopage from "./Nopage";
+
+
+// const App=()=>{
+//     return(
+//         <>
+//         <BrowserRouter>
+//         <Routes>
+//             <Route path="/" element={<Layout/>}>
+//             <Route path="/home" element={<Home/>}/>
+//             <Route path="/about" element={<About/>}/>
+//             <Route path="/contact" element={<Contact/>}/>
+//            <Route path="*" element={<Nopage/>}/>
+            
+            
+            
+//             </Route>
+//         </Routes>
+//         </BrowserRouter>
+//         </>
+//     )
+// }
+
+// export default App;
+
+
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Pages/Home";
+
+import Service from "./Pages/Service";
+import Contact from "./Pages/Contact";
+import Nopage from "./Nopage";
+import About from "../About";
+import Compnayservice from "./Pages/Companyservice";
+import Productservice from "./Pages/Productservice";
+import Sellsservice from "./Pages/Sellsservice";
+
+
+
+
+
+const App=()=>{
+  return(
+    <>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+      <Route index element={<Home/>}/>
+      <Route path="home" element={<Home/>}/>
+     <Route path="about" element={<About/>}/>
+     
+      <Route path="service" element={<Service/>}>
+      <Route path="Compnayservice" element={<Compnayservice/>}/>
+      <Route path="productservice" element={<Productservice/>}/>
+      <Route path="sellservice" element={<Sellsservice/>}/>
+      
+      </Route>
+      <Route path="contact" element={<Contact/>}/>
+      <Route path="*" element={<Nopage/>}/>
+
+      </Route>
+    </Routes>
+    </BrowserRouter>
+    </>
+  )
+}
+
+export default App;
