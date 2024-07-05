@@ -1,29 +1,86 @@
+// this is the exapmple of useeffect//
 
 
-// const display=()=>{
-//   alert("this is alert box")
-// }
+import { useEffect, useState } from "react";
+
 
 // const App=()=>{
-//   return<>
-//   <h1> this is event</h1>
-//   <button onClick={display}>click</button>
+
+
+//const[cnt,setCnt]=useState(0);
+
+
+// useEffect(()=>{
+//   setTimeout(()=>{
+//     setCnt(cnt+1);
+//   },5000)
+// },[])
+
+
+
+// return(
+//   <>
+//   <h1> this is there method of use effect {cnt}</h1>
 //   </>
+// )
+
+
 // }
 
 // export default App;
 
 
-// //passing the argunmnet//
 
-// const myName=(nm,ln)=>{
-//   alert("my name : "+ nm +" "+ ln +" from bhoapl");
-// }
+
+
+
+// this is the method  of use effect and the use state effect //
 
 // const App=()=>{
+//  const[cnt,setCnt]=useState(0)
+//  const[multi,setMulti]=useState(2)
+
+
+// useEffect(()=>{
+//   setMulti(cnt*2)
+// },[cnt])
+
+
+
+//  return(
+//   <>
+//  <h1> this is the effentn method {cnt}</h1>
+//  <h1> this is the multiplication {multi}</h1>
+//  <button onClick={()=>{setCnt(cnt+1)}}>CLICK HERE</button>
+//   </>
+//  )
+// }
+
+// export default App;
+
+
+
+
+
+
+
+
+//toprint the even number in the use state
+
+
+// const App=()=>{
+
+//   const[add,myAdd]=useState(0);
+  
+useEffect(()=>{
+  
+},[])
+
 //   return(
 //     <>
-//     <button onClick={()=>{myName("Nikesh","Yadavanshi")}}> click</button>
+//     <h1> this is the functrion to add</h1>
+//     <h1>{add}</h1>
+//     <button onClick={()=>{myAdd(add+add+1)}}>Click to Add</button>
 //     </>
 //   )
 // }
@@ -31,74 +88,6 @@
 // export default App;
 
 
-// //functuion to add the number
-
-// const myAdd=(a,b)=>{
-//  alert(a+b);
-// }
-
-// const App=()=>{
-//   return(
-//     <>
-//     <h1> this is the add function </h1>
-//     <button onClick={()=>{myAdd(23,520)}}>Click to add</button>
-//     </>
-//   )
-// }
-// export default App;
 
 
 
-
-// //function to find out the event tyype
-
-
-// const display=(nm,b)=>{
-//   alert(nm+" event type: "+ b.type)
-// }
-
-// const App=()=>{
-//   return(
-//     <>
-//     <button onClick={(e)=>{display("ranu",e)}}> click</button>
-//     </>
-//   )
-// }
-
-// export default App;
-
-
-// //without giving the parameter in dispaly button event
-
-// const dispaly=(e)=>{
-//   alert("event type :"+ e.type)
-// }
-
- 
-// const App=()=>{
-//   return(
-//     <>
-//     <button onClick={dispaly}>click to find the eventy</button>
-//     </>
-//   )
-// }
-
-// export default App;
-
-// const myVal=(e)=>{
-//  let nm=e.target.name;
-//  let val=e.target.value;
-//  let typ=e.target.type;
-//  alert("name :"+ nm +"value" + val +"type :" + typ +" event :"+ e.type);
-// }
-
-
-// const App=()=>{
-//   return(
-//     <>
-//     <button type="button" value="myBtn" name="btn1" onClick={myVal}>click</button>
-//     </>
-//   )
-// }
-
-// export default App;
