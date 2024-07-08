@@ -27,3 +27,6 @@ pages/
 images/
 public/
 .log
+package-lock.json/
+package.json/
+README.md/

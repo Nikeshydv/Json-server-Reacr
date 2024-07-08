@@ -1,93 +1,143 @@
-// this is the exapmple of useeffect//
-
-
-import { useEffect, useState } from "react";
-
-
-// const App=()=>{
-
-
-//const[cnt,setCnt]=useState(0);
-
-
-// useEffect(()=>{
-//   setTimeout(()=>{
-//     setCnt(cnt+1);
-//   },5000)
-// },[])
+ import Table from 'react-bootstrap/Table';
 
 
 
-// return(
-//   <>
-//   <h1> this is there method of use effect {cnt}</h1>
-//   </>
-// )
+ // this is the exapmle of json server 
 
 
-// }
+const App=()=>{
+  const[mydata,setData]=useState([])
 
-// export default App;
-
-
-
-
-
-
-// this is the method  of use effect and the use state effect //
-
-// const App=()=>{
-//  const[cnt,setCnt]=useState(0)
-//  const[multi,setMulti]=useState(2)
+  const loadData=()=>{
+    let url ="https://jsonplaceholder.typicode.com/todos/";
+    axios.get(url).then((res)=>{
+      setData(res.data)
+      console.log(res.data);
+    });
+  }
 
 
-// useEffect(()=>{
-//   setMulti(cnt*2)
-// },[cnt])
+const loadData=()=>{
+  let api="http://localhost:3000/student";
+  axios.get(api).then(res)=>{
+    console.log(res.data);
+    setMydata(res.data);
+
+  });
+
+
+  useEffect(()=>{
+    loadData();
+  },[])
+
+  let status ="";
+  const ans=mydata.map((key)=>{
+    if(key.completed==true){
+      status="True";
+    }
+    else{
+      status="false"
+    }
+
+    return(
+      <>
+      <tbody>
+      <tr>
+        <td>{key.userId}</td>
+        <td>{key.id}</td>
+        <td>{key.title}</td>
+        <td>{status}</td>
+      </tr>
+      </tbody>
+      </>
+    )
+  })
+
+  return(
+    <>
+    <table  striped bordered hover>
+     
+      <tr className="border">
+        <th>USER ID</th>
+        <th>id</th>
+        <th>title</th>
+        <th>completed</th>
+      </tr>
+<h1 className="text-center"> json </h1>
+<Table striped bordered hover size="sm" style={{width:'fit-content', margin:'auto', marginTop:'20px'}}>
+      <thead>
+        <tr>
+          <th>USERID</th>
+          <th>ID</th>
+          <th>TITLE</th>
+          <th>COMPLETED</th>
+        </tr>
+      </thead>
+      
+      {ans}
+    </Table>
+    </>
+  )
+}
+
+export default App;
 
 
 
-//  return(
-//   <>
-//  <h1> this is the effentn method {cnt}</h1>
-//  <h1> this is the multiplication {multi}</h1>
-//  <button onClick={()=>{setCnt(cnt+1)}}>CLICK HERE</button>
-//   </>
-//  )
-// }
-
-// export default App;
 
 
 
 
+const App=()=>{
+
+  const[myData,setMydata]=useState([]);
 
 
+  const loadData=()=>{
+    let api="http://localhost:3000/student";
+    axios.get(api).then((res)=>{
+      console.log(res.data);
+      setMydata(res.data);
 
-
-//toprint the even number in the use state
-
-
-// const App=()=>{
-
-//   const[add,myAdd]=useState(0);
+    });
   
+}
+
+const ans=myData.map((key)=>{
+  return(
+    <>
+    <tr >
+      <td>{key.Rollno}</td>
+      <td>{key.Name}</td>
+      <td>{key.City}</td>
+      <td>{key.Fees}</td>
+    </tr>
+    </>
+  )
+
+
+});
+
 useEffect(()=>{
-  
-},[])
+  loadData();
+},[]);
 
-//   return(
-//     <>
-//     <h1> this is the functrion to add</h1>
-//     <h1>{add}</h1>
-//     <button onClick={()=>{myAdd(add+add+1)}}>Click to Add</button>
-//     </>
-//   )
-// }
+return(
+  <>
+  <h1> welcome to student data</h1>
+  <Table  striped>
+  <tbody>
+        <tr >
+          <td>Roll no</td>
+          <td>Name</ td>
+          <td>city</td>
+          <td>Fess</td>
+        </tr>
+        </tbody>
+        {ans}
+        </Table>
+  </>
+)
+}
 
-// export default App;
-
-
-
-
-
+export default App;
